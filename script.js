@@ -61,6 +61,6 @@ function renderGraph(data) {
                 return colorScale(+d.PTS); // Assuming PTS is points
             })
             .append("title")
-            .text(d.DATE + ": " + d.PTS + " points");
+            .text(d.DATE + ": " + d.PTS + " points " + d.OPPONENT);
     });
 }
