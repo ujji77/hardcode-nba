@@ -60,11 +60,13 @@ function renderGraph(data, grid) {
         var box = grid.querySelector('.box[data-row="' + row + '"][data-col="' + col + '"]');
         if (box) {
             box.style.backgroundColor = colorScale(+d.PTS);
-            var tooltipText = d.DATE + ": " + d.PTS + " points " + d.OPPONENT;
+            var resultColor = d.RESULT.startsWith('W') ? 'lightgreen' : (d.RESULT.startsWith('L') ? 'red' : 'white');
+            var tooltipText = d.DATE + ": <b>" + d.PTS + " points " + d.OPPONENT + " | </b><span style='color:" + resultColor + "'>" + d.RESULT + "</span>";
             var tooltip = document.createElement('span');
             tooltip.className = 'tooltip';
-            tooltip.textContent = tooltipText;
+            tooltip.innerHTML = tooltipText; // Using innerHTML instead of textContent to render HTML
             box.appendChild(tooltip);
         }
     });
 }
+
