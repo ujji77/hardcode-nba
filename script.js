@@ -48,19 +48,22 @@ function renderGraph(data) {
     // Clear previous elements
     graphContainer.selectAll(".box").remove();
 
-    // Create elements for each data point
     data.forEach(function(d) {
         var coords = d.COORDINATE.split(',');
-        var row = parseInt(coords[1], 10) + 1; // +1 to adjust for the first row of month labels
-        var col = parseInt(coords[0], 10) + 1; // +1 to adjust for the first column of day labels
+        var row = parseInt(coords[1], 10) + 1; // +1 to adjust for labels
+        var col = parseInt(coords[0], 10) + 1; // +1 to adjust for labels
 
-        graphContainer.append("div")
-            .attr("class", "box")
-            .attr("style", "grid-row: " + row + "; grid-column: " + col + ";")
-            .style("background-color", function() {
-                return colorScale(+d.PTS); // Assuming PTS is points
-            })
-            .append("title")
-            .text(d.DATE + ": " + d.PTS + " points " + d.OPPONENT);
+        var box = graphContainer.append("div")
+                    .attr("class", "box")
+                    .attr("style", "grid-row: " + row + "; grid-column: " + col + ";")
+                    .style("background-color", function() {
+                        return colorScale(+d.PTS);
+                    });
+
+        // Create tooltip
+        var tooltipText = d.DATE + ": " + d.PTS + " points " + d.OPPONENT;
+        box.append("span")
+            .attr("class", "tooltip")
+            .text(tooltipText);
     });
 }

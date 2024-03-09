@@ -33,10 +33,32 @@ body {
     height: 20px;
     background-color: #ebedf0;
     border-radius: 2px;
+    position: relative;
 }
 
 .box:hover {
     background-color: #ccc;
+}
+
+.tooltip {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(50%, -125%);
+    border: 1px solid #333;
+    background-color: #161616;
+    border-radius: 5px;
+    padding: 5px;
+    color: white;
+    text-align: center;
+    font-size: 12px;
+    z-index: 10;
+    white-space: nowrap;
+}
+
+.box:hover .tooltip {
+    display: block;
 }
 
 /* Media Query for Small Screens */
