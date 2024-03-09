@@ -3,22 +3,31 @@ document.addEventListener('DOMContentLoaded', function() {
     const days = ["", "M", "T", "W", "T", "F", "S", "S"];
     const months = ["", "Oct", "", "Nov", "", "", "", "", "Dec", "", "", "", "", "Jan", "", "", "", "Feb", "", "", "", "Mar", "", "", "", "Apr"];
 
-    // Create month labels in the first row
-    for (let col = 0; col < 26; col++) {
-        const label = document.createElement('div');
-        label.className = 'label';
-        label.textContent = months[col];
-        grid.appendChild(label);
-    }
-
-    // Create day labels in the first column
+    // Create month and day labels, and default boxes
     for (let row = 1; row <= 8; row++) {
-        const label = document.createElement('div');
-        label.className = 'label';
-        label.textContent = days[row - 1];
-        label.style.gridColumn = 1;
-        label.style.gridRow = row + 1; // +1 because the first row is for months
-        grid.appendChild(label);
+        for (let col = 1; col <= 26; col++) {
+            if (col === 1 && row > 1) { // Day labels
+                const label = document.createElement('div');
+                label.className = 'label';
+                label.textContent = days[row - 1];
+                label.style.gridColumn = col;
+                label.style.gridRow = row;
+                grid.appendChild(label);
+            } else if (row === 1) { // Month labels
+                const label = document.createElement('div');
+                label.className = 'label';
+                label.textContent = months[col - 1];
+                label.style.gridColumn = col;
+                label.style.gridRow = row;
+                grid.appendChild(label);
+            } else { // Default boxes
+                const box = document.createElement('div');
+                box.className = 'box';
+                box.setAttribute('data-row', row);
+                box.setAttribute('data-col', col);
+                grid.appendChild(box);
+            }
+        }
     }
 
     // Event listener for file input change
@@ -29,41 +38,33 @@ document.addEventListener('DOMContentLoaded', function() {
             reader.readAsText(file);
             reader.onload = function() {
                 var data = d3.csvParse(reader.result);
-                renderGraph(data);
+                renderGraph(data, grid);
             };
         }
     });
 });
 
 // Function to render graph
-function renderGraph(data) {
-    // Define color scale
+function renderGraph(data, grid) {
     var colorScale = d3.scaleLinear()
                    .domain([0, 20, 25, 30, 35])
                    .range(["#ebedf0", "#c6e48b", "#9ec9a7", "#7bc96f", "#239a3b"]);
   
-    // Select the graph container
-    var graphContainer = d3.select("#chart .grid");
-
-    // Clear previous elements
-    graphContainer.selectAll(".box").remove();
-
+    // Update boxes with data
     data.forEach(function(d) {
         var coords = d.COORDINATE.split(',');
-        var row = parseInt(coords[1], 10) + 1; // +1 to adjust for labels
-        var col = parseInt(coords[0], 10) + 1; // +1 to adjust for labels
+        var row = parseInt(coords[1], 10);
+        var col = parseInt(coords[0], 10);
 
-        var box = graphContainer.append("div")
-                    .attr("class", "box")
-                    .attr("style", "grid-row: " + row + "; grid-column: " + col + ";")
-                    .style("background-color", function() {
-                        return colorScale(+d.PTS);
-                    });
-
-        // Create tooltip
-        var tooltipText = d.DATE + ": " + d.PTS + " points " + d.OPPONENT;
-        box.append("span")
-            .attr("class", "tooltip")
-            .text(tooltipText);
+        // Find the box with the specific row and column
+        var box = grid.querySelector('.box[data-row="' + row + '"][data-col="' + col + '"]');
+        if (box) {
+            box.style.backgroundColor = colorScale(+d.PTS);
+            var tooltipText = d.DATE + ": " + d.PTS + " points " + d.OPPONENT;
+            var tooltip = document.createElement('span');
+            tooltip.className = 'tooltip';
+            tooltip.textContent = tooltipText;
+            box.appendChild(tooltip);
+        }
     });
 }
