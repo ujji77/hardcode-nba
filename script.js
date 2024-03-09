@@ -39,8 +39,8 @@ document.addEventListener('DOMContentLoaded', function() {
 function renderGraph(data) {
     // Define color scale
     var colorScale = d3.scaleLinear()
-                       .domain([0, 25, 30, 35])
-                       .range(["#ebedf0", "#c6e48b", "#7bc96f", "#239a3b"]);
+                   .domain([0, 20, 25, 30, 35])
+                   .range(["#ebedf0", "#c6e48b", "#9ec9a7", "#7bc96f", "#239a3b"]);
   
     // Select the graph container
     var graphContainer = d3.select("#chart .grid");
