@@ -195,6 +195,7 @@ body.dark-mode {
     font-size: 10px;
     color: var(--text-color);
     text-align: left;
+    padding-bottom: 10px;
 }
 
 .stat-main {
@@ -209,7 +210,7 @@ body.dark-mode {
     bottom: 5px;
     right: 5px;
     background-color: #e1e4e8;
-    color: var(--text-color);
+    /* color: var(--text-color); */
     border-radius: 3px;
     padding: 2px 5px;
     font-size: 10px;
