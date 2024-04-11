@@ -5,6 +5,7 @@ body, html {
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: initial;
     font-family: Arial, sans-serif;
 }
 
@@ -205,6 +206,11 @@ body.dark-mode {
     font-size: 10px;
 }
 
+.section-title {
+    font-size: 18px;
+    text-align: left !important;
+    font-weight: normal;
+}
 
 /* Add this CSS at the end of your existing stylesheet */
 
@@ -280,5 +286,9 @@ body.dark-mode {
 
     .stat-main {
         font-size: 20px;
+    }
+
+    .stat-sub {
+        font-size: 7px;
     }
 }
