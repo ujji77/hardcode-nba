@@ -5,17 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GitHub Contributions Chart</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-pSRfsiN70+vhPfKZ8OYnTChPRyzApTf5NjbpI1PozwIHVa7ikV1CnE3dZ7Gr6mz/b1tStNwcBgIjwYShMw2DiA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
     <div class="container">
-        <div class="toggle-container">
-            <input type="checkbox" id="dark-mode-toggle" class="toggle">
-            <label for="dark-mode-toggle" class="toggle-label">
-                <i class="fas fa-sun"></i>
-                <i class="fas fa-moon"></i>
-            </label>
-        </div>
 
         <div class="dropdown-container">
             <select id="player-dropdown">
@@ -34,6 +26,15 @@
         <div id="chart">
             <div class="grid"></div>
         </div>
+        </div>
+
+        <div class="toggle-container">
+            <input type="checkbox" id="dark-mode-toggle" class="toggle">
+            <label for="dark-mode-toggle" class="toggle-label"></label>
+            <div class="mode-labels">
+                <span class="dark-mode-label">Dark Mode</span>
+                <span class="light-mode-label">Light Mode</span>
+            </div>
         </div>
     </div>
   
