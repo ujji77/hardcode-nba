@@ -86,23 +86,6 @@ body, html {
     display: block;
 }
 
-/* Media Query for Small Screens */
-@media (max-width: 600px) {
-    .grid {
-        grid-template-columns: 30px repeat(25, 10px);
-        grid-template-rows: 30px repeat(7, 10px);
-    }
-
-    .label {
-        font-size: 0.4em;
-    }
-
-    .box {
-        width: 10px;
-        height: 10px;
-    }
-}
-
 #player-info {
     display: flex;
     align-items: center;
@@ -275,3 +258,27 @@ body.dark-mode {
     display: inline;
 }
 
+/* Media Query for Small Screens */
+@media (max-width: 600px) {
+    .container {
+        width: 90%;
+    }
+    
+    .grid {
+        grid-template-columns: 30px repeat(25, 10px);
+        grid-template-rows: 30px repeat(7, 10px);
+    }
+
+    .label {
+        font-size: 0.4em;
+    }
+
+    .box {
+        width: 10px;
+        height: 10px;
+    }
+
+    .stat-main {
+        font-size: 20px;
+    }
+}
