@@ -17,10 +17,13 @@ body, html {
     max-width: 600px;
 }
 
-.dropdown-container, .input-container {
+.dropdown-container {
     width: 100%;
     margin-bottom: 20px;
+    display: flex;
+    justify-content: center; /* Align the container to the center horizontally */
 }
+
 
 .graph-container {
     display: flex;
@@ -207,7 +210,7 @@ body.dark-mode {
 }
 
 .section-title {
-    font-size: 18px;
+    font-size: 14px;
     text-align: left !important;
     font-weight: normal;
 }
