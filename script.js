@@ -46,7 +46,7 @@ function updatePlayerInfo(playerName) {
         const player = players.find(p => p.File.includes(playerName));
         if (player) {
             // Assuming 'lebron.png' is in the same directory as your HTML file
-            document.getElementById("player-image").src = playerName.toLowerCase() + '.png';
+            document.getElementById("player-image").src = 'images/' + playerName.toLowerCase() + '.png';
             document.getElementById("player-name").textContent = player.Name;
             document.getElementById("player-meta").textContent = `${player.Team} • ${player.Number} • ${player.Position}`;
         }
