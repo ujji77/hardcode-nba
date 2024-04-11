@@ -182,24 +182,26 @@ body.dark-mode {
 .stat-box {
     flex-basis: 22%; /* Adjusts the base width of each box */
     text-align: center;
-    /* border: 1px solid #e1e4e8; */
-    border-top: 1px solid #e1e4e8;
-    border-bottom: 1px solid #e1e4e8;
-    /* border-radius: 5px; */
+    border: 1px solid #e1e4e8;
+    /* border-top: 1px solid #e1e4e8;
+    border-bottom: 1px solid #e1e4e8; */
+    border-radius: 5px;
     padding: 10px;
     position: relative;
 }
 
 .stat-title {
     margin-bottom: 5px;
-    font-size: 14px;
+    font-size: 10px;
     color: var(--text-color);
+    text-align: left;
 }
 
 .stat-main {
-    font-size: 20px;
+    font-size: 32px;
     font-weight: bold;
     color: var(--text-color);
+    text-align: left;
 }
 
 .stat-sub {
