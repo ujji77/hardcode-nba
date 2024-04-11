@@ -22,16 +22,22 @@ body, html {
 }
 
 .graph-container {
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically */
     width: 100%;
     border: 1px #e1e4e8 solid;
     padding: 2%;
 }
 
 #chart {
-    width: 100%;
-    /* border: 1px #e1e4e8 solid; */
+    /* If #chart has a specific width, remove the width: 100%; */
+    display: flex;
+    justify-content: center; /* Centers the grid horizontally within the chart */
+    align-items: center; /* Centers the grid vertically within the chart */
     padding: 2%;
 }
+
 
 .grid {
     display: grid;
