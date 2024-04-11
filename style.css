@@ -112,13 +112,6 @@ body, html {
     border: 3px solid #e1e4e8; /* Optional border */
 }
 
-.player-image img {
-    width: 100%; /* Ensure the image takes up the full width of the container */
-    height: 100%; /* Ensure the image takes up the full height of the container */
-    object-fit: cover; /* Maintain aspect ratio and cover the container */
-    transform: scale(1.5); /* Zoom the image by 25% */
-}
-
 #player-details {
     display: flex;
     flex-direction: column;
