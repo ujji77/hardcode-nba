@@ -35,6 +35,21 @@ function loadPlayerData(filenameWithoutExtension, grid) {
     }).catch(function(error) {
         console.error("Failed to load file:", filename, "Error:", error);
     });
+
+    // Update the player information
+    updatePlayerInfo(filenameWithoutExtension);
+}
+
+// New function to update the player information
+function updatePlayerInfo(playerName) {
+    d3.csv("Player Database.csv").then(function(players) {
+        const player = players.find(p => p.File.includes(playerName));
+        if (player) {
+            document.getElementById("player-image").src = player.Image;
+            document.getElementById("player-name").textContent = player.Name;
+            document.getElementById("player-meta").textContent = `${player.Team} • #${player.Number} • ${player.Position}`;
+        }
+    });
 }
 
 

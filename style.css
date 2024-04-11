@@ -96,3 +96,33 @@ body, html {
         height: 10px;
     }
 }
+
+#player-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.player-image {
+    border-radius: 50%;
+    width: 80px; /* Adjust size as needed */
+    height: 80px; /* Adjust size as needed */
+    object-fit: cover;
+    border: 3px solid #e1e4e8; /* Optional border */
+}
+
+#player-details {
+    display: flex;
+    flex-direction: column;
+}
+
+#player-name {
+    font-size: 24px; /* Adjust size as needed */
+    font-weight: bold;
+}
+
+#player-meta {
+    font-size: 14px; /* Adjust size as needed */
+    color: #555; /* Adjust color as needed */
+}
