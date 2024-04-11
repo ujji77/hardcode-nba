@@ -28,13 +28,15 @@ function loadPlayerDatabase(grid) {
 }
 
 // Function to load specific player data CSV and render the graph
-function loadPlayerData(filename, grid) {
+function loadPlayerData(filenameWithoutExtension, grid) {
+    const filename = `${filenameWithoutExtension}.csv`; // Add the .csv extension
     d3.csv(filename).then(function(playerData) {
         renderGraph(playerData, grid);
     }).catch(function(error) {
         console.error("Failed to load file:", filename, "Error:", error);
     });
 }
+
 
 // Function to render the graph based on player data
 function renderGraph(data, grid) {
