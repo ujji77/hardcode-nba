@@ -140,9 +140,9 @@ body, html {
     --border-color: #444444;
     --box-color: #333333;
     --box-hover-color: #555555;
-    --tooltip-border-color: #ffffff;
-    --tooltip-background-color: #333333;
-    --tooltip-text-color: #ffffff;
+    --tooltip-border-color: #333333;
+    --tooltip-background-color: #ffffff;
+    --tooltip-text-color: #333333;
 }
 
 body.dark-mode {
@@ -166,6 +166,10 @@ body.dark-mode {
     border-color: var(--tooltip-border-color);
     background-color: var(--tooltip-background-color);
     color: var(--tooltip-text-color);
+}
+
+#player-meta {
+    color: var(--text-color);
 }
 
 /* Add this CSS at the end of your existing stylesheet */
