@@ -131,3 +131,89 @@ body, html {
     margin: 0; /* Removes any default margin */
     padding-bottom: 5px; /* Adjust bottom padding as needed */
 }
+
+/* Add this CSS at the end of your existing stylesheet */
+
+.dark-mode {
+    --background-color: #161616;
+    --text-color: #ffffff;
+    --border-color: #444444;
+    --box-color: #333333;
+    --box-hover-color: #555555;
+    --tooltip-border-color: #ffffff;
+    --tooltip-background-color: #333333;
+    --tooltip-text-color: #ffffff;
+}
+
+body.dark-mode {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.container.dark-mode {
+    border-color: var(--border-color);
+}
+
+.box.dark-mode {
+    background-color: var(--box-color);
+}
+
+.box.dark-mode:hover {
+    background-color: var(--box-hover-color);
+}
+
+.tooltip.dark-mode {
+    border-color: var(--tooltip-border-color);
+    background-color: var(--tooltip-background-color);
+    color: var(--tooltip-text-color);
+}
+
+/* Add this CSS at the end of your existing stylesheet */
+
+.toggle-container {
+    display: flex;
+    align-items: center;
+}
+
+.toggle {
+    display: none;
+}
+
+.toggle + .toggle-label {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+    background-color: #ccc;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.toggle + .toggle-label i {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: #fff;
+    transition: transform 0.3s;
+}
+
+.toggle + .toggle-label .fa-sun {
+    left: 5px;
+}
+
+.toggle + .toggle-label .fa-moon {
+    right: 5px;
+}
+
+.toggle:checked + .toggle-label {
+    background-color: #4CAF50;
+}
+
+.toggle:checked + .toggle-label .fa-sun {
+    transform: translateX(20px);
+}
+
+.toggle:checked + .toggle-label .fa-moon {
+    transform: translateX(-20px);
+}

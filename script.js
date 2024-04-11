@@ -1,4 +1,15 @@
 document.addEventListener('DOMContentLoaded', function() {
+    const darkModeToggle = document.getElementById('dark-mode-toggle');
+    darkModeToggle.addEventListener('change', function() {
+        if (darkModeToggle.checked) {
+            // Change colors for dark mode
+            document.body.classList.add('dark-mode');
+        } else {
+            // Revert back to light mode colors
+            document.body.classList.remove('dark-mode');
+        }
+    });
+
     // Create the grid structure
     const grid = document.querySelector('.grid');
     createGridStructure(grid);
@@ -6,6 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Load the player database and add change event listener to the dropdown
     loadPlayerDatabase(grid);
 });
+
 
 // Function to load player database and set up the dropdown
 function loadPlayerDatabase(grid) {
