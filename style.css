@@ -115,14 +115,19 @@ body, html {
 #player-details {
     display: flex;
     flex-direction: column;
+    align-items: flex-start; /* Aligns text to the left */
 }
 
 #player-name {
     font-size: 24px; /* Adjust size as needed */
     font-weight: bold;
+    margin: 0; /* Removes any default margin */
+    padding-bottom: 5px; /* Adjust bottom padding as needed */
 }
 
 #player-meta {
     font-size: 14px; /* Adjust size as needed */
     color: #555; /* Adjust color as needed */
+    margin: 0; /* Removes any default margin */
+    padding-bottom: 5px; /* Adjust bottom padding as needed */
 }
