@@ -106,10 +106,17 @@ body, html {
 
 .player-image {
     border-radius: 50%;
-    width: 80px; /* Adjust size as needed */
-    height: 80px; /* Adjust size as needed */
-    object-fit: cover;
+    width: 80px; /* Container size */
+    height: 80px; /* Container size */
+    overflow: hidden; /* Ensure image stays within the container */
     border: 3px solid #e1e4e8; /* Optional border */
+}
+
+.player-image img {
+    width: 100%; /* Ensure the image takes up the full width of the container */
+    height: 100%; /* Ensure the image takes up the full height of the container */
+    object-fit: cover; /* Maintain aspect ratio and cover the container */
+    transform: scale(1.25); /* Zoom the image by 25% */
 }
 
 #player-details {
