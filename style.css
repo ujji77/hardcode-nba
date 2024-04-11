@@ -182,8 +182,10 @@ body.dark-mode {
 .stat-box {
     flex-basis: 22%; /* Adjusts the base width of each box */
     text-align: center;
-    border: 1px solid #e1e4e8;
-    border-radius: 5px;
+    /* border: 1px solid #e1e4e8; */
+    border-top: 1px solid #e1e4e8;
+    border-bottom: 1px solid #e1e4e8;
+    /* border-radius: 5px; */
     padding: 10px;
     position: relative;
 }
@@ -191,13 +193,13 @@ body.dark-mode {
 .stat-title {
     margin-bottom: 5px;
     font-size: 14px;
-    color: #555;
+    color: var(--text-color);
 }
 
 .stat-main {
     font-size: 20px;
     font-weight: bold;
-    color: #000;
+    color: var(--text-color);
 }
 
 .stat-sub {
@@ -205,6 +207,7 @@ body.dark-mode {
     bottom: 5px;
     right: 5px;
     background-color: #e1e4e8;
+    color: var(--text-color);
     border-radius: 3px;
     padding: 2px 5px;
     font-size: 10px;

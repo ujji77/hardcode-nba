@@ -64,10 +64,10 @@ function updatePlayerInfo(playerName) {
             document.getElementById("player-meta").textContent = `${player.Team} • ${player.Number} • ${player.Position}`;
         // Update player stats
             document.getElementById('mpg').textContent = player.MPG;
-            document.getElementById('gpp').textContent = player.GPP;
+            document.getElementById('gpp').textContent = player.GP;
 
             document.getElementById('ppg').textContent = player.PPG;
-            document.getElementById('pgpos').textContent = player.PGpos;
+            document.getElementById('pgpos').textContent = player.PPGpos;
 
             document.getElementById('apg').textContent = player.APG;
             document.getElementById('apgpos').textContent = player.APGpos;
