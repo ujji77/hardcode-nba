@@ -1,3 +1,25 @@
+:root {
+    --background-color: #ffffff;
+    --text-color: #000000;
+    --border-color: #e1e4e8;
+    --box-color: #ebedf0;
+    --box-hover-color: #ccc;
+    --tooltip-border-color: #333;
+    --tooltip-background-color: #161616;
+    --tooltip-text-color: #ffffff;
+}
+
+.dark-mode {
+    --background-color: #161616;
+    --text-color: #ffffff;
+    --border-color: #444444;
+    --box-color: #333333;
+    --box-hover-color: #555555;
+    --tooltip-border-color: #333333;
+    --tooltip-background-color: #ffffff;
+    --tooltip-text-color: #333333;
+}
+
 body, html {
     margin: 0;
     padding: 0;
@@ -9,12 +31,18 @@ body, html {
     font-family: Arial, sans-serif;
 }
 
+body.dark-mode {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
 .container {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
     max-width: 600px;
+    border-color: var(--border-color);
 }
 
 .dropdown-container {
@@ -60,13 +88,13 @@ body, html {
 .box {
     width: 20px;
     height: 20px;
-    background-color: #ebedf0;
+    background-color: var(--box-color);
     border-radius: 2px;
     position: relative;
 }
 
 .box:hover {
-    background-color: #ccc;
+    background-color: var(--box-hover-color);
 }
 
 .tooltip {
@@ -75,11 +103,13 @@ body, html {
     top: 0;
     right: 0;
     transform: translate(50%, -125%);
-    border: 1px solid #333;
-    background-color: #161616;
+    border: 1px solid;
+    border-color: var(--tooltip-border-color);
+    background-color: var(--tooltip-background-color);
+    color: var(--tooltip-text-color);
     border-radius: 5px;
     padding: 5px;
-    color: white;
+    /* color: white; */
     text-align: center;
     font-size: 12px;
     z-index: 10;
@@ -125,41 +155,6 @@ body, html {
     padding-bottom: 5px; /* Adjust bottom padding as needed */
 }
 
-/* Add this CSS at the end of your existing stylesheet */
-
-.dark-mode {
-    --background-color: #161616;
-    --text-color: #ffffff;
-    --border-color: #444444;
-    --box-color: #333333;
-    --box-hover-color: #555555;
-    --tooltip-border-color: #333333;
-    --tooltip-background-color: #ffffff;
-    --tooltip-text-color: #333333;
-}
-
-body.dark-mode {
-    background-color: var(--background-color);
-    color: var(--text-color);
-}
-
-.container.dark-mode {
-    border-color: var(--border-color);
-}
-
-.box.dark-mode {
-    background-color: var(--box-color);
-}
-
-.box.dark-mode:hover {
-    background-color: var(--box-hover-color);
-}
-
-.tooltip.dark-mode {
-    border-color: var(--tooltip-border-color);
-    background-color: var(--tooltip-background-color);
-    color: var(--tooltip-text-color);
-}
 
 #player-meta {
     color: var(--text-color);
