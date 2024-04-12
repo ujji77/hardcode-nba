@@ -102,7 +102,7 @@ function renderGraph(data, grid) {
         if (box) {
             box.style.backgroundColor = colorScale(+d.PTS);
             var resultColor = d.RESULT.startsWith('W') ? '#4CAF50' : (d.RESULT.startsWith('L') ? 'red' : 'white');
-            var tooltipText = `${d.DATE}: <b>${d.PTS} points ${d.OPPONENT}</b> | <span style='color: ${resultColor}'>${d.RESULT}</span>`;
+            var tooltipText = `${d.DATE}: <b>${d.PTS} points ${d.OPPONENT}</b> | <b><span style='color: ${resultColor}'>${d.RESULT}</span></b>`;
             
             // Create and append tooltip
             var tooltip = document.createElement('span');
