@@ -271,6 +271,24 @@ body.dark-mode {
     display: inline;
 }
 
+#chart-key {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    margin-top: 2px;
+}
+
+#chart-key span {
+    font-size: 0.6em; /* Set the font size for the text */
+}
+
+.key-box {
+    width: 20px; /* Width of the color boxes */
+    height: 20px; /* Height of the color boxes */
+    margin: 0 2px; /* Spacing between boxes */
+    border-radius: 2px;
+}
+
 /* Media Query for Small Screens */
 @media (max-width: 600px) {
     .container {
@@ -289,6 +307,12 @@ body.dark-mode {
     .box {
         width: 10px;
         height: 10px;
+    }
+
+    .key-box {
+        width: 10px; /* Width of the color boxes */
+        height: 10px; /* Height of the color boxes */
+        margin: 0 5px; /* Spacing between boxes */
     }
 
     .stat-main {
