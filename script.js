@@ -101,7 +101,7 @@ function renderGraph(data, grid) {
         var box = grid.querySelector(`.box[data-row="${row}"][data-col="${col}"]`);
         if (box) {
             box.style.backgroundColor = colorScale(+d.PTS);
-            var resultColor = d.RESULT.startsWith('W') ? 'lightgreen' : (d.RESULT.startsWith('L') ? 'red' : 'white');
+            var resultColor = d.RESULT.startsWith('W') ? '#4CAF50' : (d.RESULT.startsWith('L') ? 'red' : 'white');
             var tooltipText = `${d.DATE}: <b>${d.PTS} points ${d.OPPONENT}</b> | <span style='color: ${resultColor}'>${d.RESULT}</span>`;
             
             // Create and append tooltip
