@@ -13,7 +13,7 @@
     --background-color: #161616;
     --text-color: #ffffff;
     --border-color: #444444;
-    --box-color: #333333;
+    --box-color: #27282c;
     --box-hover-color: #555555;
     --tooltip-border-color: #333333;
     --tooltip-background-color: #ffffff;
@@ -104,12 +104,11 @@ body.dark-mode {
     right: 0;
     transform: translate(50%, -125%);
     border: 1px solid;
-    border-color: var(--tooltip-border-color);
-    background-color: var(--tooltip-background-color);
-    color: var(--tooltip-text-color);
+    border-color: #333;
+    background-color: #161616;
+    color: #ffffff;
     border-radius: 5px;
     padding: 5px;
-    /* color: white; */
     text-align: center;
     font-size: 12px;
     z-index: 10;
