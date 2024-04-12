@@ -312,7 +312,7 @@ body.dark-mode {
     .key-box {
         width: 10px; /* Width of the color boxes */
         height: 10px; /* Height of the color boxes */
-        margin: 0 5px; /* Spacing between boxes */
+        margin: 0 2px; /* Spacing between boxes */
     }
 
     .stat-main {
