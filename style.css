@@ -305,6 +305,7 @@ body.dark-mode {
 }
 
 .toast {
+    display: none;
     position: fixed;
     bottom: 20px;
     left: 50%;
@@ -325,8 +326,8 @@ body.dark-mode {
 
 .close-btn {
     position: absolute;
-    top: 5px;
-    right: 5px;
+    top: 1px;
+    right: 1px;
     background: none;
     border: none;
     color: white;
@@ -384,5 +385,13 @@ body.dark-mode {
     .social-icons {
         right: 10px; /* Adjust right position as needed, relative to the container width */
         margin: 2%;
+    }
+
+    .box:hover .tooltip {
+        display: none;
+    }
+
+    .toast {
+        display: block;
     }
 }
