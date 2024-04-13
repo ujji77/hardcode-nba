@@ -119,12 +119,18 @@ function renderGraph(data, grid) {
                 // Create and append new toast
                 var toast = document.createElement('div');
                 toast.className = 'toast';
-                toast.textContent = tooltipText;
+                toast.innerHTML = `<div>${tooltipText}</div><button class="close-btn">×</button>`;
                 document.body.appendChild(toast);
+                // Add event listener to close button
+                var closeBtn = toast.querySelector('.close-btn');
+                closeBtn.addEventListener('click', function() {
+                    toast.remove();
+                });
             });
         }
     });
 }
+
 
 
 // Function to create grid structure
