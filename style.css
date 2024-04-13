@@ -7,6 +7,9 @@
     --tooltip-border-color: #333;
     --tooltip-background-color: #161616;
     --tooltip-text-color: #ffffff;
+    --toast-background-color: #161616;
+    --toast-text-color: #ffffff;
+    --toast-border-color: #161616;
 }
 
 .dark-mode {
@@ -18,6 +21,9 @@
     --tooltip-border-color: #333333;
     --tooltip-background-color: #ffffff;
     --tooltip-text-color: #333333;
+    --toast-background-color: #ffffff;
+    --toast-text-color: #161616;
+    --toast-border-color: #ffffff;
 }
 
 body, html {
@@ -215,9 +221,9 @@ body.dark-mode {
     position: absolute;
     top: 10px;
     right: calc(50% - 290px); /* Adjust right position as needed, relative to the container width */
-    display: flex;
-    flex-direction: column; /* Stack the icons vertically */
-    align-items: flex-end; /* Align the icons to the right side */
+    /* display: flex; */
+    /* flex-direction: column;
+    align-items: flex-end; */
 }
 
 .social-icons a {
@@ -230,7 +236,7 @@ body.dark-mode {
 
 .social-icons a:hover {
     /* color: #666666; Adjust hover color as needed */
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 
@@ -310,14 +316,14 @@ body.dark-mode {
     bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); */
     z-index: 999;
     max-width: 600px;
     width: 75%;
     border: 1px solid;
-    border-color: #333;
-    background-color: var(--background-color);
-    color: var(--text-color);
+    border-color: var(--toast-border-color);
+    background-color: var(--toast-background-color);
+    color: var(--toast-text-color);
     border-radius: 5px;
     padding: 10px;
     text-align: center;
@@ -330,7 +336,7 @@ body.dark-mode {
     right: 0%;
     background: none;
     border: none;
-    color: var(--text-color);
+    color: var(--toast-text-color);
     font-size: 16px;
     cursor: pointer;
 }
