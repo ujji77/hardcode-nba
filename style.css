@@ -313,10 +313,9 @@ body.dark-mode {
 .toast {
     display: none;
     position: fixed;
-    bottom: 20px;
+    bottom: -100px; /* Initially hidden */
     left: 50%;
     transform: translateX(-50%);
-    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); */
     z-index: 999;
     max-width: 600px;
     width: 75%;
@@ -328,6 +327,11 @@ body.dark-mode {
     padding: 10px;
     text-align: center;
     font-size: 12px;
+    transition: bottom 0.5s ease; /* Slide animation */
+}
+
+.toast.show {
+    bottom: 20px; /* Slide up to show */
 }
 
 .close-btn {
@@ -340,6 +344,7 @@ body.dark-mode {
     font-size: 16px;
     cursor: pointer;
 }
+
 
 
 /* Media Query for Small Screens */

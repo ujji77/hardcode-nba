@@ -121,10 +121,18 @@ function renderGraph(data, grid) {
                 toast.className = 'toast';
                 toast.innerHTML = `<div>${tooltipText}</div><button class="close-btn">×</button>`;
                 document.body.appendChild(toast);
+                // Apply animation class
+                setTimeout(function() {
+                    toast.classList.add('show');
+                }, 100); // Delay the animation to ensure smoothness
                 // Add event listener to close button
                 var closeBtn = toast.querySelector('.close-btn');
                 closeBtn.addEventListener('click', function() {
-                    toast.remove();
+                    toast.classList.remove('show');
+                    // Remove the toast after animation completes
+                    setTimeout(function() {
+                        toast.remove();
+                    }, 500); // Wait for animation to complete (500ms)
                 });
             });
         }
