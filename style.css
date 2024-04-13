@@ -316,8 +316,8 @@ body.dark-mode {
     width: 75%;
     border: 1px solid;
     border-color: #333;
-    background-color: #161616;
-    color: #ffffff;
+    background-color: var(--background-color);
+    color: var(--text-color);
     border-radius: 5px;
     padding: 10px;
     text-align: center;
@@ -326,11 +326,11 @@ body.dark-mode {
 
 .close-btn {
     position: absolute;
-    top: 1px;
-    right: 1px;
+    top: 0%;
+    right: 0%;
     background: none;
     border: none;
-    color: white;
+    color: var(--text-color);
     font-size: 16px;
     cursor: pointer;
 }
