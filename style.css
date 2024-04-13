@@ -321,10 +321,10 @@ body.dark-mode {
     width: 75%;
     border: 1px solid;
     border-color: var(--toast-border-color);
-    background-color: var(--toast-background-color);
-    color: var(--toast-text-color);
+    background-color: #161616;
+    color: #ffffff;
     border-radius: 5px;
-    padding: 20px;
+    padding: 15px;
     text-align: center;
     font-size: 12px;
     transition: bottom 0.5s ease; /* Slide animation */
@@ -340,7 +340,7 @@ body.dark-mode {
     right: 0%;
     background: none;
     border: none;
-    color: var(--toast-text-color);
+    color: #ffffff;
     font-size: 16px;
     cursor: pointer;
 }
