@@ -216,6 +216,8 @@ body.dark-mode {
     top: 10px;
     right: calc(50% - 290px); /* Adjust right position as needed, relative to the container width */
     display: flex;
+    flex-direction: column; /* Stack the icons vertically */
+    align-items: flex-end; /* Align the icons to the right side */
 }
 
 .social-icons a {
@@ -223,6 +225,7 @@ body.dark-mode {
     text-decoration: none;
     margin-left: 10px;
     font-size: 20px;
+    padding-bottom: 5px;
 }
 
 .social-icons a:hover {
@@ -349,5 +352,6 @@ body.dark-mode {
 
     .social-icons {
         right: 10px; /* Adjust right position as needed, relative to the container width */
+        margin: 2%;
     }
 }
