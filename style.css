@@ -324,7 +324,7 @@ body.dark-mode {
     background-color: var(--toast-background-color);
     color: var(--toast-text-color);
     border-radius: 5px;
-    padding: 10px;
+    padding: 20px;
     text-align: center;
     font-size: 12px;
     transition: bottom 0.5s ease; /* Slide animation */
