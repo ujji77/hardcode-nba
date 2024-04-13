@@ -109,9 +109,23 @@ function renderGraph(data, grid) {
             tooltip.className = 'tooltip';
             tooltip.innerHTML = tooltipText;
             box.appendChild(tooltip);
+
+            // Add event listener for mobile tap
+            box.addEventListener('click', function(event) {
+                event.preventDefault();
+                // Remove any existing toasts
+                var existingToasts = document.querySelectorAll('.toast');
+                existingToasts.forEach(toast => toast.remove());
+                // Create and append new toast
+                var toast = document.createElement('div');
+                toast.className = 'toast';
+                toast.textContent = tooltipText;
+                document.body.appendChild(toast);
+            });
         }
     });
 }
+
 
 // Function to create grid structure
 function createGridStructure(grid) {
