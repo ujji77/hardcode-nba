@@ -319,9 +319,9 @@ body.dark-mode {
     z-index: 999;
     max-width: 600px;
     width: 75%;
-    border: 1px solid;
-    border-color: var(--toast-border-color);
-    background-color: #161616;
+    /* border: 1px solid;
+    border-color: var(--toast-border-color); */
+    background-color: #000000;
     color: #ffffff;
     border-radius: 5px;
     padding: 15px;
