@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GitHub Contributions Chart</title>
+    <title>NBA MVP Scoring GitHub Contributions</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script defer src="https://eu.umami.is/script.js" data-website-id="cc214da2-8793-4bee-9fef-14cc3bfb3299"></script>
 </head>
 <body>
     <div class="container">
@@ -16,7 +17,7 @@
         </div>        
 
         <div class="dropdown-container">
-            <select id="player-dropdown">
+            <select id="player-dropdown" data-umami-event="dropdown">
             </select>
         </div>
 
@@ -77,7 +78,7 @@
         
 
         <div class="toggle-container">
-            <input type="checkbox" id="dark-mode-toggle" class="toggle">
+            <input type="checkbox" id="dark-mode-toggle" class="toggle" data-umami-event="dark/light mode toggle">
             <label for="dark-mode-toggle" class="toggle-label"></label>
             <div class="mode-labels">
                 <span class="dark-mode-label">Dark Mode</span>
