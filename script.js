@@ -88,8 +88,15 @@ function updatePlayerInfo(playerName) {
 
 // Function to render the graph based on player data
 function renderGraph(data, grid) {
-    // Clear any previous tooltips
-    grid.querySelectorAll('.tooltip').forEach(tooltip => tooltip.remove());
+    // Clear any previous graph data
+    grid.querySelectorAll('.box').forEach(box => {
+        box.style.backgroundColor = ''; // Clear box color
+        const tooltip = box.querySelector('.tooltip');
+        if (tooltip) {
+            tooltip.remove(); // Clear tooltip
+        }
+        box.removeEventListener('click', boxClickHandler); // Remove event listener
+    });
 
     // Set the color scale for the boxes
     var colorScale = d3.scaleLinear()
@@ -116,32 +123,36 @@ function renderGraph(data, grid) {
             box.appendChild(tooltip);
 
             // Add event listener for mobile tap
-            box.addEventListener('click', function(event) {
-                event.preventDefault();
-                // Remove any existing toasts
-                var existingToasts = document.querySelectorAll('.toast');
-                existingToasts.forEach(toast => toast.remove());
-                // Create and append new toast
-                var toast = document.createElement('div');
-                toast.className = 'toast';
-                toast.innerHTML = `<div>${tooltipText}</div><button class="close-btn">×</button>`;
-                document.body.appendChild(toast);
-                // Apply animation class
-                setTimeout(function() {
-                    toast.classList.add('show');
-                }, 100); // Delay the animation to ensure smoothness
-                // Add event listener to close button
-                var closeBtn = toast.querySelector('.close-btn');
-                closeBtn.addEventListener('click', function() {
-                    toast.classList.remove('show');
-                    // Remove the toast after animation completes
-                    setTimeout(function() {
-                        toast.remove();
-                    }, 500); // Wait for animation to complete (500ms)
-                });
-            });
+            box.addEventListener('click', boxClickHandler);
         }
     });
+
+    // Define event handler for box click
+    function boxClickHandler(event) {
+        event.preventDefault();
+        // Remove any existing toasts
+        var existingToasts = document.querySelectorAll('.toast');
+        existingToasts.forEach(toast => toast.remove());
+        // Create and append new toast
+        var tooltipText = event.currentTarget.querySelector('.tooltip').innerHTML;
+        var toast = document.createElement('div');
+        toast.className = 'toast';
+        toast.innerHTML = `<div>${tooltipText}</div><button class="close-btn">×</button>`;
+        document.body.appendChild(toast);
+        // Apply animation class
+        setTimeout(function() {
+            toast.classList.add('show');
+        }, 100); // Delay the animation to ensure smoothness
+        // Add event listener to close button
+        var closeBtn = toast.querySelector('.close-btn');
+        closeBtn.addEventListener('click', function() {
+            toast.classList.remove('show');
+            // Remove the toast after animation completes
+            setTimeout(function() {
+                toast.remove();
+            }, 500); // Wait for animation to complete (500ms)
+        });
+    }
 }
 
 
