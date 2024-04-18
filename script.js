@@ -43,9 +43,6 @@ function loadPlayerDatabase(grid) {
 function loadPlayerData(filenameWithoutExtension, grid) {
     const filename = `data/${filenameWithoutExtension}.csv`; // Path to the CSV folder
     
-    // Clear the grid before loading new player data
-    grid.innerHTML = '';
-    
     d3.csv(filename).then(function(playerData) {
         renderGraph(playerData, grid);
     }).catch(function(error) {
