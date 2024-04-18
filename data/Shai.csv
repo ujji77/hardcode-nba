@@ -1,0 +1,77 @@
+COORDINATE,DATE,OPPONENT,RESULT,MIN,PTS,REB,AST,STL,BLK
+"26,8",Sunday 14 April ,vs DAL,W 135-86,16,15,1,6,0,0
+"26,6",Friday 12 April ,vs MIL,W 125-107,29,23,7,3,0,1
+"26,4",Wednesday 10 April ,vs SA,W 127-89,26,26,6,5,0,0
+"26,3",Tuesday 9 April ,vs SAC,W 112-105,38,40,7,4,2,2
+"24,8",Sunday 31 March ,@NY,W 113-112,35,19,2,3,1,0
+"24,3",Tuesday 26 March ,@NO,W 119-112,38,24,5,8,2,0
+"23,8",Sunday 24 March ,@MIL,L 118-93,30,12,3,2,3,1
+"23,6",Friday 22 March ,@TOR,W 123-103,33,23,7,8,3,1
+"23,4",Wednesday 20 March ,vs UTA,W 119-107,33,31,3,7,4,0
+"22,7",Saturday 16 March ,@MEM,W 118-112,35,20,7,3,0,1
+"22,5",Thursday 14 March ,vs DAL,W 126-119,37,31,9,5,2,0
+"22,3",Tuesday 12 March ,vs IND,L 121-111,37,30,10,5,2,1
+"21,8",Sunday 10 March ,vs MEM,W 124-93,27,23,2,6,0,0
+"21,6",Friday 8 March ,vs MIA,W 107-100,36,37,5,6,1,2
+"21,4",Wednesday 6 March ,@POR,W 128-120,36,37,3,5,1,1
+"21,2",Monday 4 March ,@LAL,L 116-104,30,20,7,4,4,2
+"20,8",Sunday 3 March ,@PHO,W 118-110,38,35,8,9,3,3
+"20,5",Thursday 29 February ,@SA,L 132-118,35,31,6,3,1,1
+"20,3",Tuesday 27 February ,vs HOU,W 112-95,32,31,8,3,1,0
+"19,8",Sunday 25 February ,@HOU,W 123-110,37,36,5,7,3,1
+"19,6",Friday 23 February ,vs WAS,W 147-106,30,30,7,9,1,1
+"19,5",Thursday 22 February ,vs LAC,W 129-107,35,31,4,8,1,2
+"18,8",Sunday 18 February ,@EAS,L 211-186,28,31,4,6,1,0
+"18,3",Tuesday 13 February ,@ORL,W 127-113,34,32,3,5,2,1
+"17,8",Sunday 11 February ,vs SAC,W 127-113,39,38,3,7,1,2
+"17,7",Saturday 10 February ,@DAL,L 146-111,29,25,6,5,0,1
+"17,3",Tuesday 6 February ,@UTA,L 124-117,36,28,4,7,1,1
+"16,8",Sunday 4 February ,vs TOR,W 135-127,48,23,9,14,2,3
+"16,6",Friday 2 February ,vs CHA,W 126-106,30,31,3,9,5,3
+"16,4",Wednesday 31 January ,vs DEN,W 105-100,36,34,7,5,1,2
+"16,2",Monday 29 January ,vs MIN,L 107-101,39,37,7,8,2,0
+"15,8",Sunday 28 January ,@DET,L 120-104,29,31,5,4,1,0
+"15,6",Friday 26 January ,@NO,W 107-83,32,31,4,5,2,1
+"15,4",Wednesday 24 January ,@SA,W 140-114,29,32,6,10,2,1
+"15,3",Tuesday 23 January ,vs POR,W 111-109,35,33,6,10,5,0
+"14,7",Saturday 20 January ,@MIN,W 102-97,37,33,2,6,2,0
+"14,5",Thursday 18 January ,@UTA,W 134-129,35,31,6,6,1,1
+"14,3",Tuesday 16 January ,@LAC,L 128-117,34,19,2,4,0,2
+"14,2",Monday 15 January ,@LAL,L 112-105,34,24,3,6,1,1
+"13,7",Saturday 13 January ,vs ORL,W 112-100,36,37,6,7,3,1
+"13,5",Thursday 11 January ,vs POR,W 139-77,21,31,5,4,0,1
+"13,4",Wednesday 10 January ,@MIA,W 128-120,34,28,2,8,1,1
+"13,2",Monday 8 January ,@WAS,W 136-128,36,32,6,5,3,1
+"12,6",Friday 5 January ,@BKN,L 124-115,36,34,9,6,0,0
+"12,4",Wednesday 3 January ,@ATL,L 141-138,35,33,13,8,0,0
+"12,3",Tuesday 2 January ,vs BOS,W 127-123,37,36,6,7,1,0
+"11,8",Sunday 31 December ,vs BKN,W 124-108,35,24,4,6,0,0
+"11,6",Friday 29 December ,@DEN,W 119-93,33,40,4,3,2,1
+"11,4",Wednesday 27 December ,vs NY,W 129-120,36,36,7,8,2,2
+"11,3",Tuesday 26 December ,vs MIN,W 129-106,33,34,6,9,2,1
+"10,7",Saturday 23 December ,vs LAL,L 129-120,38,34,5,7,3,0
+"10,5",Thursday 21 December ,vs LAC,W 134-115,32,31,8,4,4,2
+"10,2",Monday 18 December ,vs MEM,W 116-97,28,30,9,5,4,0
+"9,7",Saturday 16 December ,@DEN,W 118-117,37,25,6,8,2,0
+"9,5",Thursday 14 December ,@SAC,L 128-123,38,43,6,9,2,0
+"9,2",Monday 11 December ,vs UTA,W 134-120,28,30,4,7,3,0
+"8,6",Friday 8 December ,vs GS,W 138-136,42,38,5,5,5,1
+"8,4",Wednesday 6 December ,@HOU,L 110-101,37,33,3,6,6,1
+"7,7",Saturday 2 December ,@DAL,W 126-120,39,17,3,9,5,1
+"7,5",Thursday 30 November ,vs LAL,W 133-110,35,33,4,7,1,0
+"7,3",Tuesday 28 November ,@MIN,L 106-103,34,32,4,4,3,2
+"6,7",Saturday 25 November ,vs PHI,L 127-123,36,31,6,5,2,0
+"6,4",Wednesday 22 November ,vs CHI,W 116-102,37,40,5,12,1,3
+"5,8",Sunday 19 November ,@POR,W 134-91,23,28,3,4,1,0
+"5,7",Saturday 18 November ,@GS,W 130-123,41,40,7,6,2,2
+"5,5",Thursday 16 November ,@GS,W 128-109,29,24,2,7,3,1
+"5,3",Tuesday 14 November ,vs SA,W 123-87,28,28,6,5,7,0
+"4,8",Sunday 12 November ,@PHO,W 111-99,37,35,7,4,1,1
+"4,6",Friday 10 November ,@SAC,L 105-98,38,33,7,5,2,2
+"4,4",Wednesday 8 November ,vs CLE,W 128-120,38,43,7,6,2,1
+"4,2",Monday 6 November ,vs ATL,W 126-117,37,30,8,6,1,0
+"3,4",Wednesday 1 November ,vs NO,L 110-106,38,20,5,8,3,0
+"3,2",Monday 30 October ,vs DET,W 124-112,33,32,9,4,3,0
+"2,8",Sunday 29 October ,vs DEN,L 128-95,28,7,4,7,1,0
+"2,6",Friday 27 October ,@CLE,W 108-105,36,34,11,4,5,1
+"2,4",Wednesday 25 October ,@CHI,W 124-104,36,31,5,10,1,2
