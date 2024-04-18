@@ -42,6 +42,10 @@ function loadPlayerDatabase(grid) {
 // Function to load specific player data CSV and render the graph
 function loadPlayerData(filenameWithoutExtension, grid) {
     const filename = `data/${filenameWithoutExtension}.csv`; // Path to the CSV folder
+    
+    // Clear the grid before loading new player data
+    grid.innerHTML = '';
+    
     d3.csv(filename).then(function(playerData) {
         renderGraph(playerData, grid);
     }).catch(function(error) {
@@ -51,6 +55,7 @@ function loadPlayerData(filenameWithoutExtension, grid) {
     // Update the player information
     updatePlayerInfo(filenameWithoutExtension);
 }
+
 
 
 // New function to update the player information
