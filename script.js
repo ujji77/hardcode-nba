@@ -72,8 +72,8 @@ function updatePlayerInfo(playerName) {
             document.getElementById('rpg').textContent = player.RPG;
             document.getElementById('rpgpos').textContent = player.RPGpos;
 
-            document.getElementById('mpg').textContent = player.FG;
-            document.getElementById('gpp').textContent = player.FGpos;
+            document.getElementById('fg').textContent = player.FG;
+            document.getElementById('fgp').textContent = player.FGpos;
         }
     }).catch(function(error) {
         console.error("Error updating player info:", error);
