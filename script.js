@@ -97,8 +97,8 @@ function renderGraph(data, grid) {
 
     // Set the color scale for the boxes
     var colorScale = d3.scaleLinear()
-        .domain([0, 20, 25, 30, 35])
-        .range(["#ebedf0", "#c6e48b", "#9ec9a7", "#7bc96f", "#239a3b"]);
+        .domain([0, 20, 25, 30, 35, 100])
+        .range(["#ebedf0", "#c6e48b", "#9ec9a7", "#7bc96f", "#239a3b", "#005800"]);
 
     // Update boxes with player data
     data.forEach(function(d) {
