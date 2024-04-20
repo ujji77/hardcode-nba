@@ -1,6 +1,6 @@
 # NBA MVP Scoring GitHub Contributions
 
-Welcome to the NBA MVP Scoring GitHub Contributions project! This project aims to visualize the scoring contributions of NBA players in a GitHub-like contribution graph format.
+Welcome to the NBA MVP Scoring GitHub Contributions project! This project aims to visualise the scoring contributions of NBA players in a GitHub-like contribution graph format.
 
 ## Overview
 
