@@ -53,8 +53,6 @@ function loadPlayerData(filenameWithoutExtension, grid) {
     updatePlayerInfo(filenameWithoutExtension);
 }
 
-
-
 // New function to update the player information
 function updatePlayerInfo(playerName) {
     d3.csv("Player Database.csv").then(function(players) {
@@ -64,7 +62,7 @@ function updatePlayerInfo(playerName) {
             document.getElementById("player-image").src = 'images/' + playerName.toLowerCase() + '.png';
             document.getElementById("player-name").textContent = player.Name;
             document.getElementById("player-meta").textContent = `${player.Team} • ${player.Number} • ${player.Position}`;
-        // Update player stats
+            // Update player stats
             document.getElementById('ppg').textContent = player.PPG;
             document.getElementById('pgpos').textContent = player.PPGpos;
 
@@ -82,6 +80,63 @@ function updatePlayerInfo(playerName) {
     });
 }
 
+// Convert a date string to grid coordinates
+function dateToCoordinates(dateStr) {
+    // Extract day of week, day number, and month
+    const dateMatch = dateStr.trim().match(/(\w+)\s+(\d+)\s+(\w+)/);
+    
+    if (!dateMatch) {
+        console.error("Failed to parse date:", dateStr);
+        return null;
+    }
+    
+    const dayOfWeek = dateMatch[1];
+    const dayNum = parseInt(dateMatch[2], 10);
+    const month = dateMatch[3];
+    
+    // Day of week mapping to rows
+    const dayToRow = {
+        'Monday': 2,
+        'Tuesday': 3,
+        'Wednesday': 4,
+        'Thursday': 5,
+        'Friday': 6,
+        'Saturday': 7,
+        'Sunday': 8
+    };
+    
+    // Get the row based on day of week
+    const row = dayToRow[dayOfWeek];
+    if (!row) {
+        console.error("Unknown day of week:", dayOfWeek);
+        return null;
+    }
+    
+    // Determine column based on month and day
+    let col;
+    
+    // Map month + day to column
+    if (month === 'October') {
+        col = 2 + Math.floor((dayNum - 1) / 10);
+    } else if (month === 'November') {
+        col = 3 + Math.floor((dayNum - 1) / 7);
+    } else if (month === 'December') {
+        col = 8 + Math.floor((dayNum - 1) / 6);
+    } else if (month === 'January') {
+        col = 13 + Math.floor((dayNum - 1) / 6);
+    } else if (month === 'February') {
+        col = 18 + Math.floor((dayNum - 1) / 10);
+    } else if (month === 'March') {
+        col = 21 + Math.floor((dayNum - 1) / 8);
+    } else if (month === 'April') {
+        col = 25 + Math.floor((dayNum - 1) / 10);
+    } else {
+        console.error("Unknown month:", month);
+        return null;
+    }
+    
+    return { col, row };
+}
 
 // Function to render the graph based on player data
 function renderGraph(data, grid) {
@@ -102,9 +157,16 @@ function renderGraph(data, grid) {
 
     // Update boxes with player data
     data.forEach(function(d) {
-        var coords = d.COORDINATE.split(',');
-        var row = parseInt(coords[1], 10);
-        var col = parseInt(coords[0], 10);
+        // Use the date to determine the coordinates
+        const coords = dateToCoordinates(d.DATE);
+        
+        if (!coords) {
+            console.error("Failed to determine coordinates for date:", d.DATE);
+            return; // Skip this data point
+        }
+        
+        var row = coords.row;
+        var col = coords.col;
 
         // Find the specific box
         var box = grid.querySelector(`.box[data-row="${row}"][data-col="${col}"]`);
@@ -121,6 +183,8 @@ function renderGraph(data, grid) {
 
             // Add event listener for mobile tap
             box.addEventListener('click', boxClickHandler);
+        } else {
+            console.error(`No box found for row=${row}, col=${col}`);
         }
     });
 
@@ -151,8 +215,6 @@ function renderGraph(data, grid) {
         });
     }
 }
-
-
 
 // Function to create grid structure
 function createGridStructure(grid) {
