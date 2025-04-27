@@ -112,28 +112,33 @@ function dateToCoordinates(dateStr) {
         return null;
     }
     
-    // Determine column based on month and day
-    let col;
+    // Convert date string to Date object for better calculation
+    // The format is "Weekday DD Month", so we need to add the year
+    const year = (month === 'January' || month === 'February' || month === 'March' || month === 'April') ? 2025 : 2024;
     
-    // Map month + day to column
-    if (month === 'October') {
-        col = 2 + Math.floor((dayNum - 1) / 10);
-    } else if (month === 'November') {
-        col = 3 + Math.floor((dayNum - 1) / 7);
-    } else if (month === 'December') {
-        col = 8 + Math.floor((dayNum - 1) / 6);
-    } else if (month === 'January') {
-        col = 13 + Math.floor((dayNum - 1) / 6);
-    } else if (month === 'February') {
-        col = 18 + Math.floor((dayNum - 1) / 10);
-    } else if (month === 'March') {
-        col = 21 + Math.floor((dayNum - 1) / 8);
-    } else if (month === 'April') {
-        col = 25 + Math.floor((dayNum - 1) / 10);
-    } else {
-        console.error("Unknown month:", month);
-        return null;
-    }
+    // Map abbreviated months to full names for better parsing
+    const monthMap = {
+        'Oct': 'October',
+        'Nov': 'November',
+        'Dec': 'December',
+        'Jan': 'January',
+        'Feb': 'February',
+        'Mar': 'March',
+        'Apr': 'April'
+    };
+    
+    const fullMonth = monthMap[month] || month;
+    const dateObj = new Date(`${fullMonth} ${dayNum}, ${year}`);
+    
+    // Calculate the column based on the date's position in the season
+    // Our grid starts on Monday, October 21, 2024
+    const startDate = new Date(2024, 9, 21); // 9 = October (0-indexed months)
+    
+    // Calculate weeks since start date (each column represents a week)
+    const weeksSinceStart = Math.floor((dateObj - startDate) / (7 * 24 * 60 * 60 * 1000));
+    
+    // Column calculation (add 2 because first column is for labels)
+    const col = weeksSinceStart + 2;
     
     return { col, row };
 }
@@ -219,7 +224,20 @@ function renderGraph(data, grid) {
 // Function to create grid structure
 function createGridStructure(grid) {
     const days = ["", "M", "T", "W", "T", "F", "S", "S"];
-    const months = ["", "Oct", "", "Nov", "", "", "", "", "Dec", "", "", "", "", "Jan", "", "", "", "Feb", "", "", "", "Mar", "", "", "", "Apr"];
+    
+    // Generate month labels based on our date range
+    // From Monday Oct 21, 2024 to Sunday Apr 13, 2025
+    const months = Array(27).fill(""); // Initialize with empty strings
+    
+    // Place month labels at their correct positions
+    // These positions were calculated based on when each month starts in the grid
+    months[2] = "Oct";   // October starts at column 2
+    months[4] = "Nov";   // November starts around column 4
+    months[8] = "Dec";   // December starts around column 8
+    months[12] = "Jan";  // January starts around column 12
+    months[16] = "Feb";  // February starts around column 16 
+    months[20] = "Mar";  // March starts around column 20
+    months[25] = "Apr";  // April starts around column 25
 
     // Create month and day labels, and default boxes
     for (let row = 1; row <= 8; row++) {
@@ -230,7 +248,7 @@ function createGridStructure(grid) {
                 div.textContent = days[row - 1];
             } else if (row === 1) { // Month labels
                 div.className = 'label';
-                div.textContent = months[col - 1];
+                div.textContent = months[col];
             } else { // Default boxes
                 div.className = 'box';
                 div.setAttribute('data-row', row);
