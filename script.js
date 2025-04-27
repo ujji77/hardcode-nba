@@ -130,12 +130,21 @@ function dateToCoordinates(dateStr) {
     const fullMonth = monthMap[month] || month;
     const dateObj = new Date(`${fullMonth} ${dayNum}, ${year}`);
     
-    // Calculate the column based on the date's position in the season
+    // Calculate the column based on the Monday of the week that contains this date
     // Our grid starts on Monday, October 21, 2024
     const startDate = new Date(2024, 9, 21); // 9 = October (0-indexed months)
     
-    // Calculate weeks since start date (each column represents a week)
-    const weeksSinceStart = Math.floor((dateObj - startDate) / (7 * 24 * 60 * 60 * 1000));
+    // First, find the Monday of the current week
+    const jsDay = dateObj.getDay(); // 0 = Sunday, 1 = Monday, etc.
+    const daysFromMonday = jsDay === 0 ? 6 : jsDay - 1; // For Sunday, it's 6 days from Monday
+    
+    // Create a new date for the Monday of the current week
+    const mondayOfWeek = new Date(dateObj);
+    mondayOfWeek.setDate(dateObj.getDate() - daysFromMonday);
+    
+    // Now calculate weeks since start based on Mondays
+    const daysSinceStart = Math.floor((mondayOfWeek - startDate) / (24 * 60 * 60 * 1000));
+    const weeksSinceStart = Math.floor(daysSinceStart / 7);
     
     // Column calculation (add 2 because first column is for labels)
     const col = weeksSinceStart + 2;
