@@ -1,31 +1,75 @@
 DATE,OPPONENT,RESULT,MIN,PTS,REB,AST,STL,BLK
-Tuesday 30 April,vs ORL,W 120-89,34,35,8,10,1,0
-Sunday 28 April,@ ORL,W 107-98,42,37,14,3,3,0
-Friday 26 April,@ ORL,L 95-93,39,36,9,4,1,1
-Wednesday 24 April,vs ORL,W 96-94,38,27,7,6,2,0
-Monday 22 April,vs ORL,W 114-84,32,23,5,6,1,1
-Sunday 14 April,vs WAS,W 132-122,35,32,8,10,3,1
-Friday 12 April,@ CHA,W 131-98,29,27,7,8,0,1
-Wednesday 10 April,vs NYK,W 132-109,37,41,14,5,1,1
-Monday 8 April,vs POR,W 124-107,32,26,11,9,1,0
-Saturday 6 April,vs SAC,W 101-100,38,31,8,9,2,1
-Thursday 4 April,@ DET,W 129-102,30,25,6,10,1,0
-Tuesday 2 April,vs OKC,W 135-100,33,35,9,7,2,1
-Sunday 31 March,@ ATL,W 130-118,36,30,12,8,1,1
-Friday 29 March,@ ATL,W 123-106,33,27,8,7,3,0
-Wednesday 27 March,vs ATL,W 125-117,35,29,8,8,2,1
-Monday 25 March,@ ATL,W 123-106,32,28,5,6,1,0
-Saturday 23 March,vs CHI,L 120-118 OT,40,26,9,10,0,1
-Thursday 21 March,@ MIL,W 122-119 OT,43,31,10,8,0,0
-Tuesday 19 March,@ MIL,W 122-119,37,32,8,7,1,0
-Sunday 17 March,@ WAS,W 130-104,31,30,9,6,2,1
-Friday 15 March,vs PHX,W 127-112,34,29,10,8,0,0
-Wednesday 13 March,@ UTA,W 123-107,33,27,7,6,3,1
-Monday 11 March,@ POR,W 128-94,29,27,5,7,2,0
-Saturday 9 March,@ PHX,L 122-114,37,35,9,5,1,1
-Thursday 7 March,@ DEN,W 115-109,38,34,11,8,3,1
-Tuesday 5 March,vs CLE,W 116-107,35,25,8,11,1,0
-Sunday 3 March,vs GSW,W 140-88,27,22,7,5,0,1
-Friday 1 March,vs DAL,W 138-110,35,32,10,8,1,0
-Wednesday 28 February,vs PHI,W 117-99,31,28,8,9,1,0
-Monday 26 February,vs NYK,W 116-102,36,35,7,6,1,0
+Saturday 12 April,vs CHA,W 130-94,32,16,8,8,0,0
+Wednesday 9 April,@ NY,W 119-117 OT,48,32,7,5,1,1
+Saturday 5 April,vs PHX,W 123-103,35,23,8,8,1,1
+Thursday 3 April,vs MIA,L 124-103,32,16,3,7,1,0
+Tuesday 1 April,@ MEM,W 117-103,38,25,14,2,0,1
+Sunday 30 March,@ SA,W 121-111,36,29,10,8,0,1
+Tuesday 25 March,@ SAC,W 113-95,26,25,7,8,0,0
+Sunday 23 March,@ POR,W 129-116,37,30,9,9,1,2
+Saturday 22 March,@ UTAH,W 121-99,33,26,6,6,3,0
+Saturday 15 March,@ BKN,W 115-113,36,20,8,8,0,0
+Friday 14 March,@ MIA,W 103-91,37,28,4,5,1,0
+Wednesday 12 March,vs OKC,L 118-112,41,33,8,8,0,0
+Sunday 9 March,vs LAL,W 111-101,45,40,12,8,2,1
+Friday 7 March,vs PHI,W 123-105,31,35,7,2,3,0
+Sunday 2 March,vs DEN,W 110-103,38,16,11,7,0,0
+Saturday 1 March,vs CLE,L 123-116,41,46,16,9,0,3
+Thursday 27 February,@ DET,L 117-97,33,27,6,3,0,0
+Wednesday 26 February,@ TOR,W 111-101,40,19,6,11,1,0
+Sunday 23 February,vs NY,W 118-105,37,25,10,9,1,0
+Friday 21 February,@ PHI,W 124-104,35,15,11,10,1,0
+Monday 17 February,@ CHK*,W 41-25,11,15,3,2,0,0
+Monday 17 February,vs CAN*,W 42-35,10,6,2,2,0,1
+Thursday 13 February,vs SA,W 116-103,38,32,14,7,0,1
+Tuesday 11 February,@ MIA,W 103-85,38,33,8,2,0,1
+Sunday 9 February,@ NY,W 131-104,37,40,6,4,0,0
+Friday 7 February,vs DAL,L 127-120,29,17,4,4,0,1
+Wednesday 5 February,@ CLE,W 112-105,35,22,4,7,2,2
+Sunday 2 February,@ PHI,W 118-110,44,35,7,11,1,1
+Saturday 1 February,@ NO,W 118-116,39,27,6,10,1,0
+Thursday 30 January,vs CHI,W 122-100,32,16,8,5,0,0
+Tuesday 28 January,vs HOU,L 114-112,42,19,6,7,0,0
+Saturday 25 January,@ DAL,W 122-107,35,24,6,3,1,0
+Friday 24 January,@ LAL,L 117-96,30,16,6,5,1,1
+Thursday 23 January,@ LAC,W 117-113 OT,43,24,7,8,1,2
+Monday 20 January,@ GS,W 125-85,28,22,9,7,2,0
+Sunday 19 January,vs ATL,L 119-115 OT,43,23,8,7,3,0
+Saturday 18 January,vs ORL,W 121-94,35,30,6,4,2,1
+Thursday 16 January,@ TOR,L 110-97,36,16,10,7,0,1
+Sunday 12 January,vs NO,W 120-119,36,38,11,1,1,1
+Saturday 11 January,vs SAC,L 114-97,35,15,12,5,0,0
+Wednesday 8 January,@ DEN,W 118-106,38,29,4,6,1,2
+Sunday 5 January,@ OKC,L 105-92,39,26,10,1,2,0
+Saturday 4 January,@ HOU,W 109-86,33,20,6,5,1,0
+Friday 3 January,@ MIN,W 118-115,38,33,8,9,3,0
+Tuesday 31 December,vs TOR,W 125-71,29,23,8,3,1,0
+Sunday 29 December,vs IND,L 123-114,41,22,9,6,3,1
+Saturday 28 December,vs IND,W 142-105,32,22,13,4,3,0
+Wednesday 25 December,vs PHI,L 118-114,42,32,15,4,1,1
+Sunday 22 December,@ CHI,W 123-98,36,43,15,10,0,0
+Friday 20 December,vs CHI,L 117-108,37,31,10,4,2,0
+Sunday 15 December,@ WSH,W 112-98,35,28,12,2,0,0
+Sunday 8 December,vs MEM,L 127-121,38,17,13,9,0,0
+Saturday 7 December,vs MIL,W 111-105,37,34,10,5,0,0
+Tuesday 3 December,vs MIA,W 108-89,36,18,11,4,1,0
+Sunday 1 December,@ CLE,L 115-111,38,33,8,4,1,1
+Saturday 30 November,@ CHI,W 138-129,36,35,14,5,1,1
+Tuesday 26 November,vs LAC,W 126-94,30,20,9,4,0,2
+Sunday 24 November,vs MIN,W 107-105,38,26,8,4,2,0
+Saturday 23 November,@ WSH,W 108-96,37,16,9,8,2,0
+Wednesday 20 November,vs CLE,W 120-117,38,33,12,7,2,0
+Sunday 17 November,vs TOR,W 126-123 OT,42,24,11,9,0,0
+Thursday 14 November,@ BKN,W 139-114,35,36,9,10,0,0
+Wednesday 13 November,vs ATL,L 117-116,37,20,6,8,1,2
+Sunday 10 November,@ MIL,W 113-107,40,31,12,6,0,0
+Saturday 9 November,vs BKN,W 108-104 OT,42,33,9,6,2,1
+Thursday 7 November,vs GS,L 118-112,37,32,4,2,1,1
+Tuesday 5 November,@ ATL,W 123-93,30,28,6,9,2,0
+Saturday 2 November,@ CHA,W 113-103,34,29,7,3,0,0
+Friday 1 November,@ CHA,W 124-109,36,32,11,3,3,1
+Wednesday 30 October,@ IND,L 135-132 OT,43,37,8,4,4,0
+Monday 28 October,vs MIL,W 119-108,36,15,8,4,2,1
+Sunday 27 October,@ DET,W 124-118,38,37,4,2,2,1
+Friday 25 October,@ WSH,W 122-102,29,25,11,6,1,0
+Wednesday 23 October,vs NY,W 132-109,30,37,4,10,1,1
