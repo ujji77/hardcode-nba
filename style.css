@@ -497,4 +497,26 @@ body, html {
         display: block;
         width: 85%;
     }
+
+     /* Add these new styles for the dropdown container */
+     .dropdown-container {
+        width: 100%;
+        margin-bottom: 15px; /* Reduced margin for mobile */
+        display: flex;
+        justify-content: center;
+        position: relative;
+        z-index: 10; /* Ensure it appears above other elements */
+        /* Make dropdown more visible on mobile */
+        padding: 5px 0;
+    }
+    
+    /* Style for the dropdown itself - adjust as needed based on your HTML structure */
+    .dropdown-container select,
+    .dropdown-container .custom-dropdown {
+        width: 90%; /* Make dropdown take up most of the width on mobile */
+        max-width: none; /* Override any max-width that might be set */
+        font-size: 14px; /* Ensure text is readable on small screens */
+        height: 40px; /* Make the touch target larger for mobile */
+
+    }
 }
