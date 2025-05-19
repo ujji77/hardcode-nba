@@ -1,0 +1,408 @@
+:root {
+    --background-color: #ffffff;
+    --text-color: #000000;
+    --border-color: #e1e4e8;
+    --box-color: #ebedf0;
+    --box-hover-color: #ccc;
+    --tooltip-border-color: #333;
+    --tooltip-background-color: #161616;
+    --tooltip-text-color: #ffffff;
+    --toast-background-color: #161616;
+    --toast-text-color: #ffffff;
+    --toast-border-color: #161616;
+}
+
+.dark-mode {
+    --background-color: #161616;
+    --text-color: #ffffff;
+    --border-color: #444444;
+    --box-color: #27282c;
+    --box-hover-color: #555555;
+    --tooltip-border-color: #333333;
+    --tooltip-background-color: #ffffff;
+    --tooltip-text-color: #333333;
+    --toast-background-color: #ffffff;
+    --toast-text-color: #161616;
+    --toast-border-color: #ffffff;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: initial;
+    font-family: Arial, sans-serif;
+}
+
+body.dark-mode {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 600px;
+    border-color: var(--border-color);
+}
+
+.dropdown-container {
+    width: 100%;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center; /* Align the container to the center horizontally */
+}
+
+
+.graph-container {
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically */
+    width: 100%;
+    border: 1px #e1e4e8 solid;
+    padding: 2%;
+}
+
+#chart {
+    /* If #chart has a specific width, remove the width: 100%; */
+    display: flex;
+    justify-content: center; /* Centers the grid horizontally within the chart */
+    align-items: center; /* Centers the grid vertically within the chart */
+    padding: 2%;
+}
+
+
+.grid {
+    display: grid;
+    grid-template-columns: 20px repeat(25, 20px);
+    grid-template-rows: 40px repeat(7, 20px);
+    gap: 2px;
+}
+
+.label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.6em;
+}
+
+.box {
+    width: 20px;
+    height: 20px;
+    background-color: var(--box-color);
+    border-radius: 2px;
+    position: relative;
+}
+
+.box:hover {
+    background-color: var(--box-hover-color);
+}
+
+.tooltip {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(50%, -125%);
+    border: 1px solid;
+    border-color: #333;
+    background-color: #161616;
+    color: #ffffff;
+    border-radius: 5px;
+    padding: 5px;
+    text-align: center;
+    font-size: 12px;
+    z-index: 10;
+    white-space: nowrap;
+}
+
+.box:hover .tooltip {
+    display: block;
+}
+
+#player-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.player-image {
+    border-radius: 50%;
+    width: 80px; /* Container size */
+    height: 80px; /* Container size */
+    overflow: hidden; /* Ensure image stays within the container */
+    border: 3px solid #e1e4e8; /* Optional border */
+}
+
+#player-details {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Aligns text to the left */
+}
+
+#player-name {
+    font-size: 24px; /* Adjust size as needed */
+    font-weight: bold;
+    margin: 0; /* Removes any default margin */
+    padding-bottom: 5px; /* Adjust bottom padding as needed */
+}
+
+#player-meta {
+    font-size: 14px; /* Adjust size as needed */
+    color: #555; /* Adjust color as needed */
+    margin: 0; /* Removes any default margin */
+    padding-bottom: 5px; /* Adjust bottom padding as needed */
+}
+
+
+#player-meta {
+    color: var(--text-color);
+}
+
+#player-stats {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin: 20px 0;
+}
+
+.stat-box {
+    flex-basis: 22%; /* Adjusts the base width of each box */
+    text-align: center;
+    border: 1px solid #e1e4e8;
+    border-radius: 5px;
+    padding: 10px;
+    position: relative;
+}
+
+.stat-title {
+    margin-bottom: 5px;
+    font-size: 10px;
+    color: var(--text-color);
+    text-align: left;
+    padding-bottom: 10px;
+}
+
+.stat-main {
+    font-size: 32px;
+    font-weight: bold;
+    color: var(--text-color);
+    text-align: left;
+}
+
+.stat-sub {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    background-color: var(--border-color);
+    color: var(--text-color);
+    border-radius: 3px;
+    padding: 2px 5px;
+    font-size: 10px;
+}
+
+.section-title {
+    font-size: 14px;
+    text-align: left !important;
+    font-weight: normal;
+}
+
+.section-container {
+    width: 100%;
+}
+
+.social-icons {
+    position: absolute;
+    top: 10px;
+    right: calc(50% - 290px); /* Adjust right position as needed, relative to the container width */
+    /* display: flex; */
+    /* flex-direction: column;
+    align-items: flex-end; */
+}
+
+.social-icons a {
+    color: var(--text-color);
+    text-decoration: none;
+    margin-left: 10px;
+    font-size: 20px;
+    padding-bottom: 5px;
+}
+
+.social-icons a:hover {
+    /* color: #666666; Adjust hover color as needed */
+    text-decoration: none;
+}
+
+
+/* Add this CSS at the end of your existing stylesheet */
+
+.toggle-container {
+    position: fixed;
+    bottom: 20px; /* Adjust this value to change the distance from the bottom */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.toggle {
+    display: none;
+}
+
+.toggle + .toggle-label {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+    background-color: #000000;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.toggle:checked + .toggle-label {
+    background-color: #ffffff;
+}
+
+.mode-labels {
+    margin-top: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100px;
+    font-size: 12px;
+}
+
+.light-mode-label {
+    display: none;
+}
+
+.toggle:checked + .toggle-label ~ .mode-labels .dark-mode-label {
+    display: none;
+}
+
+.toggle:checked + .toggle-label ~ .mode-labels .light-mode-label {
+    display: inline;
+}
+
+#chart-key {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    margin-top: 2px;
+}
+
+#chart-key span {
+    font-size: 0.6em; /* Set the font size for the text */
+}
+
+.key-box {
+    width: 20px; /* Width of the color boxes */
+    height: 20px; /* Height of the color boxes */
+    margin: 0 2px; /* Spacing between boxes */
+    border-radius: 2px;
+}
+
+.toast {
+    display: none;
+    position: fixed;
+    bottom: -100px; /* Initially hidden */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 999;
+    max-width: 600px;
+    width: 75%;
+    /* border: 1px solid;
+    border-color: var(--toast-border-color); */
+    background-color: #000000;
+    color: #ffffff;
+    border-radius: 5px;
+    padding: 15px;
+    text-align: center;
+    font-size: 12px;
+    transition: bottom 0.5s ease; /* Slide animation */
+}
+
+.toast.show {
+    bottom: 20px; /* Slide up to show */
+}
+
+.close-btn {
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+
+
+/* Media Query for Small Screens */
+@media (max-width: 600px) {
+    .container {
+        width: 90%;
+    }
+    
+    .grid {
+        grid-template-columns: 30px repeat(25, 10px);
+        grid-template-rows: 30px repeat(7, 10px);
+    }
+
+    .label {
+        font-size: 0.4em;
+    }
+
+    .box {
+        width: 10px;
+        height: 10px;
+    }
+
+    .key-box {
+        width: 10px; /* Width of the color boxes */
+        height: 10px; /* Height of the color boxes */
+        margin: 0 2px; /* Spacing between boxes */
+    }
+
+    #chart-key span {
+        font-size: 0.4em; /* Set the font size for the text */
+    }
+
+    .stat-main {
+        font-size: 20px;
+    }
+
+    .stat-sub {
+        font-size: 7px;
+    }
+
+    .section-title {
+        font-size: 14px;
+    }
+    
+    .section-container {
+        width: 90%;
+    }
+
+    .social-icons {
+        right: 10px; /* Adjust right position as needed, relative to the container width */
+        margin: 2%;
+    }
+
+    .box:hover .tooltip {
+        display: none;
+    }
+
+    .toast {
+        display: block;
+    }
+}
