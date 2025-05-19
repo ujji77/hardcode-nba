@@ -10,6 +10,8 @@
     --toast-background-color: #161616;
     --toast-text-color: #ffffff;
     --toast-border-color: #161616;
+    --accent-color: #239a3b; /* New accent color for consistency */
+    --transition-speed: 0.3s; /* Standardized transition speed */
 }
 
 .dark-mode {
@@ -24,6 +26,7 @@
     --toast-background-color: #ffffff;
     --toast-text-color: #161616;
     --toast-border-color: #ffffff;
+    --accent-color: #7bc96f; /* Adjusted accent for dark mode */
 }
 
 body, html {
@@ -35,11 +38,13 @@ body, html {
     align-items: center;
     text-align: initial;
     font-family: Arial, sans-serif;
+    transition: background-color var(--transition-speed), color var(--transition-speed);
 }
 
-body.dark-mode {
+body {
     background-color: var(--background-color);
     color: var(--text-color);
+    padding: 20px 0; /* Added vertical padding */
 }
 
 .container {
@@ -49,33 +54,53 @@ body.dark-mode {
     width: 100%;
     max-width: 600px;
     border-color: var(--border-color);
+    position: relative; /* For proper social icons positioning */
+    padding: 0 15px; /* Added horizontal padding */
 }
 
 .dropdown-container {
     width: 100%;
-    margin-bottom: 20px;
+    margin-bottom: 25px; /* Increased margin */
     display: flex;
-    justify-content: center; /* Align the container to the center horizontally */
+    justify-content: center;
 }
 
+#player-dropdown {
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-size: 14px;
+    width: 200px;
+    cursor: pointer;
+    transition: border-color var(--transition-speed);
+}
+
+#player-dropdown:focus {
+    outline: none;
+    border-color: var(--accent-color);
+}
 
 .graph-container {
     display: flex;
-    justify-content: center; /* Centers horizontally */
-    align-items: center; /* Centers vertically */
+    justify-content: center;
+    align-items: center;
     width: 100%;
-    border: 1px #e1e4e8 solid;
+    border: 1px solid var(--border-color);
+    border-radius: 8px; /* Added border radius */
     padding: 2%;
+    margin-bottom: 15px; /* Added margin */
+    transition: border-color var(--transition-speed);
 }
 
 #chart {
-    /* If #chart has a specific width, remove the width: 100%; */
     display: flex;
-    justify-content: center; /* Centers the grid horizontally within the chart */
-    align-items: center; /* Centers the grid vertically within the chart */
+    justify-content: center;
+    align-items: center;
     padding: 2%;
+    width: 100%;
 }
-
 
 .grid {
     display: grid;
@@ -89,6 +114,7 @@ body.dark-mode {
     align-items: center;
     justify-content: center;
     font-size: 0.6em;
+    font-weight: 500; /* Added semi-bold for better readability */
 }
 
 .box {
@@ -97,10 +123,12 @@ body.dark-mode {
     background-color: var(--box-color);
     border-radius: 2px;
     position: relative;
+    transition: background-color var(--transition-speed);
 }
 
 .box:hover {
     background-color: var(--box-hover-color);
+    transform: scale(1.1); /* Subtle zoom effect */
 }
 
 .tooltip {
@@ -109,16 +137,16 @@ body.dark-mode {
     top: 0;
     right: 0;
     transform: translate(50%, -125%);
-    border: 1px solid;
-    border-color: #333;
-    background-color: #161616;
-    color: #ffffff;
+    border: 1px solid var(--tooltip-border-color);
+    background-color: var(--tooltip-background-color);
+    color: var(--tooltip-text-color);
     border-radius: 5px;
-    padding: 5px;
+    padding: 6px 8px; /* Increased padding */
     text-align: center;
     font-size: 12px;
     z-index: 10;
     white-space: nowrap;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* Added subtle shadow */
 }
 
 .box:hover .tooltip {
@@ -128,65 +156,76 @@ body.dark-mode {
 #player-info {
     display: flex;
     align-items: center;
-    gap: 10px;
-    margin-bottom: 20px;
+    gap: 15px; /* Increased gap */
+    margin-bottom: 25px; /* Increased margin */
+    width: 100%;
 }
 
 .player-image {
     border-radius: 50%;
-    width: 80px; /* Container size */
-    height: 80px; /* Container size */
-    overflow: hidden; /* Ensure image stays within the container */
-    border: 3px solid #e1e4e8; /* Optional border */
+    width: 85px; /* Slightly increased */
+    height: 85px; /* Slightly increased */
+    overflow: hidden;
+    border: 3px solid var(--border-color);
+    transition: border-color var(--transition-speed);
+    object-fit: cover; /* Ensures image properly fills the container */
 }
 
 #player-details {
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* Aligns text to the left */
+    align-items: flex-start;
+    flex: 1;
 }
 
 #player-name {
-    font-size: 24px; /* Adjust size as needed */
+    font-size: 26px; /* Slightly increased */
     font-weight: bold;
-    margin: 0; /* Removes any default margin */
-    padding-bottom: 5px; /* Adjust bottom padding as needed */
+    margin: 0;
+    padding-bottom: 6px;
+    line-height: 1.1; /* Improved line height */
 }
 
 #player-meta {
-    font-size: 14px; /* Adjust size as needed */
-    color: #555; /* Adjust color as needed */
-    margin: 0; /* Removes any default margin */
-    padding-bottom: 5px; /* Adjust bottom padding as needed */
-}
-
-
-#player-meta {
+    font-size: 14px;
     color: var(--text-color);
+    opacity: 0.85; /* Subtle transparency instead of separate color */
+    margin: 0;
+    padding-bottom: 5px;
+    transition: opacity var(--transition-speed);
 }
 
 #player-stats {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between; /* Changed from space-around */
     width: 100%;
-    margin: 20px 0;
+    margin: 20px 0 25px 0; /* Increased bottom margin */
+    gap: 12px; /* Added gap for more consistent spacing */
 }
 
 .stat-box {
-    flex-basis: 22%; /* Adjusts the base width of each box */
+    flex: 1; /* Changed from flex-basis to flex */
     text-align: center;
-    border: 1px solid #e1e4e8;
-    border-radius: 5px;
-    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px; /* Increased radius */
+    padding: 12px; /* Increased padding */
     position: relative;
+    transition: transform 0.2s, border-color var(--transition-speed);
+}
+
+.stat-box:hover {
+    transform: translateY(-3px); /* Subtle lift effect */
+    border-color: var(--accent-color);
 }
 
 .stat-title {
-    margin-bottom: 5px;
-    font-size: 10px;
+    margin-bottom: 8px; /* Increased margin */
+    font-size: 11px; /* Slightly increased */
     color: var(--text-color);
     text-align: left;
     padding-bottom: 10px;
+    opacity: 0.85; /* Matching player-meta opacity */
+    font-weight: 500; /* Semi-bold for better visibility */
 }
 
 .stat-main {
@@ -198,58 +237,72 @@ body.dark-mode {
 
 .stat-sub {
     position: absolute;
-    bottom: 5px;
-    right: 5px;
+    bottom: 8px; /* Increased slightly */
+    right: 8px; /* Increased slightly */
     background-color: var(--border-color);
     color: var(--text-color);
-    border-radius: 3px;
-    padding: 2px 5px;
+    border-radius: 4px; /* Increased radius */
+    padding: 3px 6px; /* Increased padding */
     font-size: 10px;
+    transition: background-color var(--transition-speed);
 }
 
 .section-title {
-    font-size: 14px;
+    font-size: 15px; /* Slightly increased */
     text-align: left !important;
-    font-weight: normal;
+    font-weight: 500; /* Semi-bold instead of normal */
+    margin-bottom: 8px; /* Added margin */
+    position: relative;
+    width: 100%;
+    padding-left: 2px; /* Small padding */
+}
+
+/* Subtle indicator for section titles */
+.section-title:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 30px;
+    height: 2px;
+    background-color: var(--accent-color);
 }
 
 .section-container {
     width: 100%;
+    margin-bottom: 20px; /* Added spacing between sections */
 }
 
 .social-icons {
     position: absolute;
     top: 10px;
-    right: calc(50% - 290px); /* Adjust right position as needed, relative to the container width */
-    /* display: flex; */
-    /* flex-direction: column;
-    align-items: flex-end; */
+    right: 10px; /* Simplified positioning */
+    display: flex;
+    gap: 12px; /* Added consistent gap */
 }
 
 .social-icons a {
     color: var(--text-color);
     text-decoration: none;
-    margin-left: 10px;
     font-size: 20px;
-    padding-bottom: 5px;
+    opacity: 0.7; /* Start with subtle opacity */
+    transition: opacity var(--transition-speed), transform var(--transition-speed);
 }
 
 .social-icons a:hover {
-    /* color: #666666; Adjust hover color as needed */
-    text-decoration: none;
+    opacity: 1; /* Full opacity on hover */
+    transform: scale(1.15); /* Subtle grow effect */
 }
-
-
-/* Add this CSS at the end of your existing stylesheet */
 
 .toggle-container {
     position: fixed;
-    bottom: 20px; /* Adjust this value to change the distance from the bottom */
+    bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
     flex-direction: column;
     align-items: center;
+    z-index: 100; /* Ensure it stays above other elements */
 }
 
 .toggle {
@@ -259,20 +312,39 @@ body.dark-mode {
 .toggle + .toggle-label {
     position: relative;
     display: inline-block;
-    width: 40px;
-    height: 20px;
+    width: 44px; /* Slightly wider */
+    height: 22px; /* Slightly taller */
     background-color: #000000;
-    border-radius: 10px;
+    border-radius: 12px; /* Increased radius */
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color var(--transition-speed);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Added subtle shadow */
+}
+
+/* Toggle switch circle */
+.toggle + .toggle-label:before {
+    content: '';
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    top: 2px;
+    left: 2px;
+    background: white;
+    transition: transform var(--transition-speed);
 }
 
 .toggle:checked + .toggle-label {
     background-color: #ffffff;
 }
 
+.toggle:checked + .toggle-label:before {
+    transform: translateX(22px);
+    background: black;
+}
+
 .mode-labels {
-    margin-top: 5px;
+    margin-top: 6px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -295,62 +367,73 @@ body.dark-mode {
 #chart-key {
     display: flex;
     align-items: center;
-    justify-content: right;
-    margin-top: 2px;
+    justify-content: flex-end; /* Better align to right */
+    margin-top: 5px; /* Increased margin */
+    gap: 2px; /* Consistent spacing */
 }
 
 #chart-key span {
-    font-size: 0.6em; /* Set the font size for the text */
+    font-size: 0.65em; /* Slightly increased */
+    opacity: 0.85; /* Matching other text elements */
 }
 
 .key-box {
-    width: 20px; /* Width of the color boxes */
-    height: 20px; /* Height of the color boxes */
-    margin: 0 2px; /* Spacing between boxes */
-    border-radius: 2px;
+    width: 20px;
+    height: 20px;
+    margin: 0 2px;
+    border-radius: 3px; /* Increased radius */
+    transition: transform 0.2s;
+}
+
+.key-box:hover {
+    transform: scale(1.15); /* Interactive effect */
 }
 
 .toast {
     display: none;
     position: fixed;
-    bottom: -100px; /* Initially hidden */
+    bottom: -100px;
     left: 50%;
     transform: translateX(-50%);
     z-index: 999;
     max-width: 600px;
     width: 75%;
-    /* border: 1px solid;
-    border-color: var(--toast-border-color); */
-    background-color: #000000;
-    color: #ffffff;
-    border-radius: 5px;
-    padding: 15px;
+    background-color: var(--toast-background-color);
+    color: var(--toast-text-color);
+    border-radius: 8px; /* Increased radius */
+    padding: 16px; /* Increased padding */
     text-align: center;
-    font-size: 12px;
-    transition: bottom 0.5s ease; /* Slide animation */
+    font-size: 13px; /* Slightly increased */
+    transition: bottom 0.5s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15); /* Added shadow */
 }
 
 .toast.show {
-    bottom: 20px; /* Slide up to show */
+    bottom: 25px; /* Slightly higher position */
 }
 
 .close-btn {
     position: absolute;
-    top: 0%;
-    right: 0%;
+    top: 8px;
+    right: 8px;
     background: none;
     border: none;
-    color: #ffffff;
+    color: var(--toast-text-color);
     font-size: 16px;
     cursor: pointer;
+    opacity: 0.7;
+    transition: opacity var(--transition-speed);
 }
 
-
+.close-btn:hover {
+    opacity: 1;
+}
 
 /* Media Query for Small Screens */
 @media (max-width: 600px) {
     .container {
-        width: 90%;
+        width: 92%; /* Slight adjustment */
+        padding: 0 10px;
     }
     
     .grid {
@@ -359,7 +442,7 @@ body.dark-mode {
     }
 
     .label {
-        font-size: 0.4em;
+        font-size: 0.45em; /* Slightly increased */
     }
 
     .box {
@@ -368,21 +451,22 @@ body.dark-mode {
     }
 
     .key-box {
-        width: 10px; /* Width of the color boxes */
-        height: 10px; /* Height of the color boxes */
-        margin: 0 2px; /* Spacing between boxes */
+        width: 10px;
+        height: 10px;
+        margin: 0 2px;
     }
 
     #chart-key span {
-        font-size: 0.4em; /* Set the font size for the text */
+        font-size: 0.45em; /* Matched to labels */
     }
 
     .stat-main {
-        font-size: 20px;
+        font-size: 22px; /* Slightly increased */
     }
 
     .stat-sub {
-        font-size: 7px;
+        font-size: 8px; /* Slightly increased */
+        padding: 2px 4px;
     }
 
     .section-title {
@@ -390,12 +474,17 @@ body.dark-mode {
     }
     
     .section-container {
-        width: 90%;
+        width: 100%;
     }
 
     .social-icons {
-        right: 10px; /* Adjust right position as needed, relative to the container width */
-        margin: 2%;
+        right: 10px;
+        top: 5px;
+        gap: 10px; /* Slightly reduced gap */
+    }
+
+    .social-icons a {
+        font-size: 18px; /* Slightly smaller */
     }
 
     .box:hover .tooltip {
@@ -404,5 +493,22 @@ body.dark-mode {
 
     .toast {
         display: block;
+    }
+    
+    #player-stats {
+        gap: 8px; /* Reduced gap */
+    }
+    
+    .stat-box {
+        padding: 10px 8px; /* Adjusted padding */
+    }
+    
+    .player-image {
+        width: 70px; /* Smaller on mobile */
+        height: 70px;
+    }
+    
+    #player-name {
+        font-size: 22px; /* Smaller on mobile */
     }
 }
