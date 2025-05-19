@@ -239,7 +239,7 @@ body {
     position: absolute;
     bottom: 8px; /* Increased slightly */
     right: 8px; /* Increased slightly */
-    background-color: var(--border-color);
+    background-color: var(--accent-color);
     color: var(--text-color);
     border-radius: 4px; /* Increased radius */
     padding: 3px 6px; /* Increased padding */

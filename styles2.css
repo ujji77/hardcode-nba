@@ -229,14 +229,14 @@ body.dark-mode {
 .social-icons a {
     color: var(--text-color);
     text-decoration: none;
-    margin-left: 10px;
     font-size: 20px;
-    padding-bottom: 5px;
+    opacity: 0.7; /* Start with subtle opacity */
+    transition: opacity var(--transition-speed), transform var(--transition-speed);
 }
 
 .social-icons a:hover {
-    /* color: #666666; Adjust hover color as needed */
-    text-decoration: none;
+    opacity: 1; /* Full opacity on hover */
+    transform: scale(1.15); /* Subtle grow effect */
 }
 
 
