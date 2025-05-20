@@ -437,8 +437,8 @@ body {
     }
     
     .grid {
-        grid-template-columns: 30px repeat(25, 10px);
-        grid-template-rows: 30px repeat(7, 10px);
+        grid-template-columns: 30px repeat(25, 11px);
+        grid-template-rows: 30px repeat(7, 11px);
     }
 
     .label {
