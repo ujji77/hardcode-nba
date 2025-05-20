@@ -496,10 +496,12 @@ body {
     
     #player-stats {
         gap: 8px; /* Reduced gap */
+        flex-wrap: wrap; /* last added */
     }
     
     .stat-box {
         padding: 10px 8px; /* Adjusted padding */
+        flex: 0 0 calc(50% - 23px); /* last added */
     }
     
     .player-image {
